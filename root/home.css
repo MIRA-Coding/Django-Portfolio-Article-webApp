@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'pixel';
+    src: url('font/advanced_pixel-7.ttf') format('truetype');
+}
+
+body {
+    background-color: rgba(5,10,29,255);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h1.Amirah {
+    font-family: pixel;
+  
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(5,10,29,255);
+    color: #ffffff;
+    height: 590px;                                              /* Increased height for a larger header */
+    position: relative;
+}
+
+#header-image {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header-text {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 90px;
+
+}
+
+#header-text h1 {
+    font-size: 150px;
+    margin: 0;
+    font-family: pixel, 'Cursive', sans-serif; /* Example of a pretty font */
+    letter-spacing: 10px;
+}
+
+#header-text p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    #header-image {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    #header-text {
+        position: static;
+        transform: none;
+        text-align: center;
+    }
+}
