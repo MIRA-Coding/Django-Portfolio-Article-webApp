@@ -1,115 +1,223 @@
+{% extends 'base.html' %}
+
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirah Mohsen Portfolio</title>
-    <link rel="stylesheet" href="home.css">
+    <style>
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px); /* Starts from below */
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0); /* Moves to its original position */
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div id="header-text">
-            <h1>Amirah Mohsen</h1>
-            <p>Senior Software Engineer | Programmer | Freelancer</p>
+<body dir="ltr" class="bg-dark text-light">
+   
+    <header class="py-5">
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h1 class="display-4 fw-bold">Amirah Mohsen</h1>
+                    <p class="lead">Senior Software Engineer | Programmer | Freelancer</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="profile-img img-fluid" src="assets/gif header.gif" alt="..">
+                </ header.gif>
+            </div>
         </div>
     </header>
-    <section id="education">
-        <h2>Education</h2>
-        <p>Umm Al-Qura University</p>
-    </section>
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certification">
-            <h3>Introduction to DevOps</h3>
-            <p>IBM, December 2024</p>
-            <p>Credential ID: LVQDNI59I47Y</p>
-        </div>
-        <div class="certification">
-            <h3>Intro to Cloud Computing</h3>
-            <p>IBM, December 2024</p>
-            <p>Credential ID: RRB4BMYF3JD3</p>
-        </div>
-        <div class="certification">
-            <h3>Learn Git: Introduction Course</h3>
-            <p>Codecademy, September 2024</p>
-        </div>
-        <div class="certification">
-            <h3>Cybersecurity Fundamentals</h3>
-            <p>IBM, June 2024</p>
+    <section id="education" class="py-5 hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Education</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center">Umm Al-Qura University</p>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience">
-            <h3>Member at Organizing Committee</h3>
-            <p>IEEE UQU, August 2024 - Present</p>
-            <p>I contribute at the Institute of Electrical and Electronics Engineers at the organizing committee.</p>
-        </div>
-        <div class="experience">
-            <h3>Member</h3>
-            <p>GDSC - Umm Al-Qura University, June 2024 - Present</p>
-            <p>At Google Developer Student Club where we share knowledge and contribute to building.</p>
-        </div>
-        <div class="experience">
-            <h3>Member at the Scientific Committee</h3>
-            <p>UQU Computing Club, February 2024 - Present</p>
-            <p>Active member of the UQU Computing Club, interested in growth within the computing community.</p>
-        </div>
-        <div class="experience">
-            <h3>Volunteer</h3>
-            <p>IEEEXtreme 18.0 Saudi Arabia, September 2024 - October 2024</p>
-            <p>Worked for the global programming competition IEEEXtreme 18 in Saudi Arabia, contributing 30 volunteer hours in various activities.</p>
+    <section id="certifications" class="py-5 bg-light hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Certifications</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Introduction to DevOps</h3>
+                            <p class="card-text">IBM, December 2024</p>
+                            <p class="card-text">Credential ID: LVQDNI59I47Y</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Intro to Cloud Computing</h3>
+                            <p class="card-text">IBM, December 2024</p>
+                            <p class="card-text">Credential ID: RRB4BMYF3JD3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Learn Git: Introduction Course</h3>
+                            <p class="card-text">Codecademy, September 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Cybersecurity Fundamentals</h3>
+                            <p class="card-text">IBM, June 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="awards">
-        <h2>Awards</h2>
-        <div class="award">
-            <h3>Participation in Club Challenge</h3>
-            <p>Issued by Creativity and Entrepreneurship Club, October 2024</p>
-            <p>Participated in the Club Challenge and was a finalist with the idea of creating a digital platform for university students.</p>
+    <section id="experience" class="py-5 hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Experience</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Member at Organizing Committee</h3>
+                            <p class="card-text">IEEE UQU, August 2024 - Present</p>
+                            <p class="card-text">I contribute at the Institute of Electrical and Electronics Engineers at the organizing committee.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Member</h3>
+                            <p class="card-text">GDSC - Umm Al-Qura University, June 2024 - Present</p>
+                            <p class="card-text">At Google Developer Student Club where we share knowledge and contribute to building.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Member at the Scientific Committee</h3>
+                            <p class="card-text">UQU Computing Club, February 2024 - Present</p>
+                            <p class="card-text">Active member of the UQU Computing Club, interested in growth within the computing community.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Volunteer</h3>
+                            <p class="card-text">IEEEXtreme 18.0 Saudi Arabia, September 2024 - October 2024</p>
+                            <p class="card-text">Worked for the global programming competition IEEEXtreme 18 in Saudi Arabia, contributing 30 volunteer hours in various activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="award">
-            <h3>Winner of Summer Challenge</h3>
-            <p>Issued by Computing Club, July 2024</p>
-            <p>Won one of the top places in the #SummerComputingChallenge organized by the Computing Club during the summer break.</p>
+    </section>
+    <section id="awards" class="py-5 bg-light hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Awards</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Participation in Club Challenge</h3>
+                            <p class="card-text">Issued by Creativity and Entrepreneurship Club, October 2024</p>
+                            <p class="card-text">Participated in the Club Challenge and was a finalist with the idea of creating a digital platform for university students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Winner of Summer Challenge</h3>
+                            <p class="card-text">Issued by Computing Club, July 2024</p>
+                            <p class="card-text">Won one of the top places in the #SummerComputingChallenge organized by the Computing Club during the summer break.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Agile</li>
-            <li>CI/CD</li>
-            <li>DevOps</li>
-            <li>Cloud Native</li>
-            <li>TDD/BDD</li>
-            <li>Hybrid Multicloud</li>
-            <li>Cloud Computing</li>
-            <li>IaaS PaaS SaaS</li>
-            <li>Critical Thinking</li>
-            <li>Problem Solving</li>
-            <li>Wireframe Prototype</li>
-            <li>Project Management</li>
-            <li>Public Speaking</li>
-            <li>HTML5</li>
-            <li>Web Engineering</li>
-            <li>Requirements Engineering</li>
-            <li>Software Design & Creation</li>
-            <li>SDLC</li>
-            <li>Creative Problem Solving</li>
-            <li>Algorithm Fundamentals</li>
-            <li>OOP</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>MySQL</li>
-            <li>Data Structures</li>
-        </ul>
+    <section id="skills" class="py-5 hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Skills</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item mx-2">Agile</li>
+                        <li class="list-inline-item mx-2">CI/CD</li>
+                        <li class="list-inline-item mx-2">DevOps</li>
+                        <li class="list-inline-item mx-2">Cloud Native</li>
+                        <li class="list-inline-item mx-2">TDD/BDD</li>
+                        <li class="list-inline-item mx-2">Hybrid Multicloud</li>
+                        <li class="list-inline-item mx-2">Cloud Computing</li>
+                        <li class="list-inline-item mx-2">IaaS PaaS SaaS</li>
+                        <li class="list-inline-item mx-2">Critical Thinking</li>
+                        <li class="list-inline-item mx-2">Problem Solving</li>
+                        <li class="list-inline-item mx-2">Wireframe Prototype</li>
+                        <li class="list-inline-item mx-2">Project Management</li>
+                        <li class="list-inline-item mx-2">Public Speaking</li>
+                        <li class="list-inline-item mx-2">HTML5</li>
+                        <li class="list-inline-item mx-2">Web Engineering</li>
+                        <li class="list-inline-item mx-2">Requirements Engineering</li>
+                        <li class="list-inline-item mx-2">Software Design & Creation</li>
+                        <li class="list-inline-item mx-2">SDLC</li>
+                        <li class="list-inline-item mx-2">Creative Problem Solving</li>
+                        <li class="list-inline-item mx-2">Algorithm Fundamentals</li>
+                        <li class="list-inline-item mx-2">OOP</li>
+                        <li class="list-inline-item mx-2">Java</li>
+                        <li class="list-inline-item mx-2">Python</li>
+                        <li class="list-inline-item mx-2">MySQL</li>
+                        <li class="list-inline-item mx-2">Data Structures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="languages">
-        <h2>Languages</h2>
-        <ul>
-            <li>Arabic: Native</li>
-            <li>Chinese: Basic Knowledge</li>
-            <li>English: Full Proficiency</li>
-        </ul>
+    <section id="languages" class="py-5 bg-light hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">Languages</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <p>Arabic: Native</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>Chinese: Basic Knowledge</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>English: Full Proficiency</p>
+                </div>
+            </div>
+        </div>
     </section>
+    <script>
+        const elements = document.querySelectorAll('.hidden');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 {% endblock %}
