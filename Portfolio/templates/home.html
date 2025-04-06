@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirah Mohsen Portfolio</title>
     <style>
+          
+            #typing-text {
+    font-family: 'Pixelify Sans', sans-serif;
+     font-size: 59px;
+    min-height: 60px; /* يحدد ارتفاعًا ثابتًا للنص */
+    display: inline-block; /* يضمن أن النص يبقى في نفس المكان */
+    
+
+}
+
         .hidden {
             opacity: 0;
             transform: translateY(20px); /* Starts from below */
@@ -16,23 +27,98 @@
             opacity: 1;
             transform: translateY(0); /* Moves to its original position */
         }
+       
+
+    
+
+    @media (max-width: 768px) {
+        .profile-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1; /* يجعل الصورة خلف النص */
+        opacity: 0.2; /* تقليل وضوح الصورة */
+        width: 100%; /* عرض الصورة بالكامل */
+        height: auto;
+    }
+        .profile-img {
+            opacity: 0.4; /* زيادة وضوح الصورة على الأجهزة المحمولة */
+        }
+
+        .containerr {
+            padding-top: 100px;
+            position: relative;
+            z-index: 1; /* يجعل النص فوق الصورة */
+        }
+         
+         
+
+    }
+      
     </style>
 </head>
 <body dir="ltr" class="bg-dark text-light">
-   
-    <header class="py-5">
-        <div class="container mt-5">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <h1 class="display-4 fw-bold">Amirah Mohsen</h1>
-                    <p class="lead">Senior Software Engineer | Programmer | Freelancer</p>
+    <header class="py-5 "  style="background: #21181b;  position: relative; ">
+        <div class="containerr">
+            <div class="row align-items-center  align-items-center">
+                
+                <div class=" col-md-6 text-center text-md-center ">
+                    <h1 class="display-4 fw-bold text-white  py-md-5" id="typing-text" style="font-size: 59px; min-height: 68px; line-height: 68px;"></h1>
+                    <script>
+                        const textElement = document.getElementById('typing-text');
+                        const texts = ["Welcome Tuwaiq", "Amirah Mohsen",];
+                        let textIndex = 0;
+                        let charIndex = 0;
+
+                        function type() {
+                            if (charIndex < texts[textIndex].length) {
+                                textElement.textContent += texts[textIndex].charAt(charIndex);
+                                charIndex++;
+                                setTimeout(type, 100);
+                            } else {
+                                if (textIndex === 0) {
+                                    setTimeout(erase, 1000);
+                                }
+                            }
+                        }
+
+                        function erase() {
+                            if (charIndex > 0) {
+                                textElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+                                charIndex--;
+                                setTimeout(erase, 50);
+                            } else {
+                                textIndex = 1; // Move to the second text
+                                setTimeout(type, 500);
+                            }
+                        }
+
+                        type();
+                    </script>
+                    <div class="row" style="position: sticky; top: 380px; z-index: 10; ">
+                        <p class="text-body-secondary font-monospace text-white-50 text-center">Senior Software Engineer &middot; Programmer &middot; Freelancer</p>
+                    </div>
+
                 </div>
-                <div class="col-md-6 text-center">
-                    <img class="profile-img img-fluid" src="assets/gif header.gif" alt="..">
-                </ header.gif>
+
+                <div class="col-md-6 text-end d-flex justify-content-center align-items-center float-start">
+                    <img class="profile-img img-fluid" src="https://i.pinimg.com/736x/3c/5d/d5/3c5dd5007987ced0489933cd31ebb143.jpg" alt="Profile Image"  >
+                </div>
+                
             </div>
         </div>
     </header>
+
+    <section id="about" class="py-5 bg-light hidden">
+        <div class="container">
+            <h2 class="text-center mb-4">About Me</h2>
+            <div class="row">
+                
+            </div>
+        </div>
+    </section>
+
     <section id="education" class="py-5 hidden">
         <div class="container">
             <h2 class="text-center mb-4">Education</h2>
@@ -43,6 +129,8 @@
             </div>
         </div>
     </section>
+
+
     <section id="certifications" class="py-5 bg-light hidden">
         <div class="container">
             <h2 class="text-center mb-4">Certifications</h2>
