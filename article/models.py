@@ -14,6 +14,8 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     tags = models.ManyToManyField(Tag, related_name='articles', blank=True)
+    image = models.ImageField(upload_to='article_images/', blank=True, null=True)  # Add this field
+
 
     def __str__(self):
         return self.title

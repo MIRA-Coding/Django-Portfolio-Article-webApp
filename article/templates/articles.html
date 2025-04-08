@@ -4,9 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
     <title>Blog Home</title>
 </head>
 <body>
@@ -29,7 +26,7 @@
                 <!-- Featured blog post -->
                 <div class="card mb-4">
                     <a href="#!">
-                        <img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="Featured Post">
+                        <img class="card-img-top" src="https://i.pinimg.com/originals/34/18/f8/3418f86372f2bf61dc15f811d88ad657.gif" alt="Featured Post">
                     </a>
                     <div class="card-body">
                         <div class="small text-muted">January 1, 2023</div>
@@ -47,13 +44,13 @@
                     <div class="col-lg-6">
                         <div class="card mb-4">
                             <a href="#!">
-                                <img class="card-img-top" src="{{ post.image_url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" style="aspect-ratio: 16 / 9; object-fit: cover; width: 100%;">
                             </a>
                             <div class="card-body">
                                 <div class="small text-muted">{{ post.created_at }}</div>
                                 <h2 class="card-title h4">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.content|truncatewords:20 }}</p>
-                                <a class="btn btn-primary" href="{% url 'article_detail' post.id %}">Read more →</a>
+                                <a class="btn btn-primary" href="#">Read more →</a>
                             </div>
                         </div>
                     </div>
@@ -100,7 +97,7 @@
                     <div class="card-body">
                         <ul class="list-unstyled mb-0">
                             {% for tag in tags %}
-                            <li><a href="{% url 'tagged_articles' tag.id %}">{{ tag.name }}</a></li>
+                            <li><a href="#">{{ tag.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
