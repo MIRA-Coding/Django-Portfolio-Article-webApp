@@ -27,10 +27,12 @@ urlpatterns = [
     path('', portfolio_views.render_portf, name='render_portf'),  
     path('subscribe/', views.subscribe, name='subscribe'),
     path('mainStory/', views.mainStory, name='mainStory'),
+    path('articles/fetch_all/', views.fetch_all_articles, name='fetch_all_articles'),
     path('articles/<str:article_title>/', views.render_generated_article, name='render_generated_article'),
-    path('articles/search/', views.search_articles, name='search_articles'),
-]
+    path('main-story/', views.mainStory, name='mainStory'),  
 
+    
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

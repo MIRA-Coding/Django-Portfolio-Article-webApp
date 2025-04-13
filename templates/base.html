@@ -18,8 +18,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Pixelify+Sans:wght@400..700&family=Space+Mono&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <style>
+                html {
+    scroll-behavior: smooth;
+}
                 main>.container {
-                    padding: 60px 15px 0;
+                    padding: 60px  0;
                     margin-bottom: 5rem;
                 }
                 .sticky-footer {
@@ -28,10 +31,14 @@
                     bottom: 0;
                     width: 100%;
                 }
+                .navbar {
+                    background-color: rgba(52, 51, 51, 0.692) !important;
+                    
+                }
             </style>
 </head>
-<body class="d-flex flex-column h-100">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3" style="background-color: rgba(52, 51, 51, 0.692)!important;">
+<body class="d-flex flex-column h-100" >
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark " style="background-color: rgba(52, 51, 51, 0.692)!important;width: 100;width: 100% important;" >
         <div class="container-fluid">
             <a class="navbar-brand pe-3" href="{% url 'render_portf' %}">Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -41,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active " aria-current="page" href="#">About</a>
+                        <a class="nav-link active " aria-current="page" href="{% url 'render_portf' %}#aboutMe">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Resume</a>
@@ -50,7 +57,7 @@
                         <a class="nav-link" href="{% url 'render_article' %}">Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Let's Collabrate</a>
+                        <a class="nav-link" href="{% url 'render_portf' %}#collaborate">Let's Collaborate</a>
                     </li>
                 </ul>
             </div>
@@ -64,9 +71,9 @@
         
     
     
-        <footer class="footer mt-auto py-3 bg-light sticky-footer">
-            <div class="container-fluid text-center">
-                 <span class="text-muted"> &copy; copy right is reserved</span>
+        <footer class="footer mt-auto py-3 bg-light ">
+            <div class="container-fluid  text-center text-gray-500 text-sm ">
+                <p>&copy; 2025 Amira mohsen. All rights reserved.</p>
             </div>
         </footer>
     

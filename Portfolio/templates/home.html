@@ -6,65 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirah Mohsen Portfolio</title>
-    <style>
-          
-            #typing-text {
-    font-family: 'Pixelify Sans', sans-serif;
-     font-size: 59px;
-    min-height: 60px; /* يحدد ارتفاعًا ثابتًا للنص */
-    display: inline-block; /* يضمن أن النص يبقى في نفس المكان */
-    
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'js/home.js' %}"></script>    
 
-}
-
-        .hidden {
-            opacity: 0;
-            transform: translateY(20px); /* Starts from below */
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .show {
-            opacity: 1;
-            transform: translateY(0); /* Moves to its original position */
-        }
-       
-
-    
-
-    @media (max-width: 768px) {
-        .profile-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1; /* يجعل الصورة خلف النص */
-        opacity: 0.2; /* تقليل وضوح الصورة */
-        width: 100%; /* عرض الصورة بالكامل */
-        height: auto;
-    }
-        .profile-img {
-            opacity: 0.4; /* زيادة وضوح الصورة على الأجهزة المحمولة */
-        }
-
-        .containerr {
-            padding-top: 100px;
-            position: relative;
-            z-index: 1; /* يجعل النص فوق الصورة */
-        }
-         
-         
-
-    }
-      
-    </style>
 </head>
+
 <body dir="ltr" class="bg-dark text-light">
-    <header class="py-5 "  style="background: #21181b;  position: relative; ">
+    <header class=""  style="background: #21181b;  position: relative; ">
         <div class="containerr">
             <div class="row align-items-center  align-items-center">
-                
-                <div class=" col-md-6 text-center text-md-center ">
-                    <h1 class="display-4 fw-bold text-white  py-md-5" id="typing-text" style="font-size: 59px; min-height: 68px; line-height: 68px;"></h1>
+
+                <div class="  text-center text-md-center " >
+                    <div id="typingid">
+                                            <h1 class="display-4 fw-bold text-white " id="typing-text" ></h1>
+
+                    </div>
                     <script>
                         const textElement = document.getElementById('typing-text');
                         const texts = ["Welcome Tuwaiq", "Amirah Mohsen",];
@@ -96,35 +52,75 @@
 
                         type();
                     </script>
-                    <div class="row" style="position: sticky; top: 380px; z-index: 10; ">
-                        <p class="text-body-secondary font-monospace text-white-50 text-center">Senior Software Engineer &middot; Programmer &middot; Freelancer</p>
-                    </div>
+                    <div class="row" style="position: sticky; top: 2px; z-index: 10; ">
+                        <p class="text-body-secondary font-monospace text-white-50 text-lg-center">Senior Software Engineer &middot; Programmer &middot; Freelancer</p>
+<div class="d-flex justify-content-center ">
+     <svg xmlns="http://www.w3.org/2000/svg"  width="15" viewBox="0 0 448 512">
+        <path fill="#ffffff" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+    </svg>
+    <div class="px-3">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512" width="15" >
+        <path  fill="#ffffff" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/>
+    </svg>
+    </div>
+    
+</div></svg>
+</div>
+   
 
+                <div class=" text-end d-flex justify-content-center align-items-center float-xl-none mb-5 pb-5 ">
+                    <img class="profile-img img-fluid mb-5" src="media/portfolio_images/imagee.PNG" alt="Profile Image"  style="width: 600px;">
                 </div>
 
-                <div class="col-md-6 text-end d-flex justify-content-center align-items-center float-start">
-                    <img class="profile-img img-fluid" src="media/portfolio_images/imagee.PNG" alt="Profile Image"  >
-                </div>
-                
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-5 bg-light hidden">
+    <section id="about" >
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
+            
             <div class="row">
                 
-            </div>
+                <div class="col-md-6 mb-4 position-relative">
+                    <h1 class="text-start mb-4 text-white hidden" style="position: relative;" class="w-100">About Me</h1>
+                    <div class="border-bottom hidden p-0 mb-4"></div>
+                    <h2 id="aboutMe" class="text-start text-white-50 font-monospace hidden  " style="position: relative; " class="w-100">I am a passionate senior software engineer student with a strong foundation in programming and a keen interest in web development.</h2>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex justify-content-center">
+                        <img class="d-flex" src="media/portfolio_images/left.png" alt="" width="140px">
+                    </div>
+                </div>
         </div>
     </section>
 
-    <section id="education" class="py-5 hidden">
-        <div class="container">
-            <h2 class="text-center mb-4">Education</h2>
+    <section  class=" hidden">
             <div class="row">
-                <div class="col-md-12">
-                    <p class="text-center">Umm Al-Qura University</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    
+                    <section class=""id="education">
+                        <div class="container py-4">
+                            <h1 class=" text-start" id="pageHeaderTitle">Education</h1>
+                    
+                            <article class="postcard  blue">
+                                <a class="postcard__img_link" href="#">
+                                    <img class="postcard__img " src="media\portfolio_images\image-removebg-preview.png" alt="Image Title" />
+                                </a>
+                                <div class="postcard__text">
+                                    <h1 class="postcard__title blue PixelifySans"><a href="https://uqu.edu.sa/?/Core/Default/Index">Umm Al-qura University</a></h1>
+                                    <div class="postcard__subtitle small">
+                                        <time datetime="2020-05-25 12:00:00">
+                                            <i class="fas fa-calendar-alt mr-2"></i>septermper 2022 - Now
+                                        </time>
+                                    </div>
+                                    <div class="postcard__bar"></div>
+                                    <div class="postcard__preview-txt">
+                                        Software Engineer Bachelor's degree. proudly at level 9, showcasing advanced expertise in programming, web development, and engineering excellence.
+                                    </div></div>
+                                    
+                                </div>
+                            </article>
+                            
                 </div>
             </div>
         </div>
@@ -240,11 +236,144 @@
             </div>
         </div>
     </section>
-    <section id="skills" class="py-5 hidden">
-        <div class="container">
+    
+
+    <script>
+      const container = document.getElementById('scrollContainer');
+const items = container.children;
+const itemCount = items.length;
+
+// Clone items to create a seamless scrolling effect
+for (let i = 0; i < 2; i++) { // Duplicate the items twice for seamless scrolling
+    for (let j = 0; j < itemCount; j++) {
+        const clone = items[j].cloneNode(true);
+        container.appendChild(clone);
+    }
+}
+
+let scrollAmount = 0;
+const scrollSpeed = 1;
+
+function autoScroll() {
+    scrollAmount += scrollSpeed;
+
+    // Check if the scroll has reached the end of the original content
+    if (scrollAmount >= container.scrollWidth / 3) {
+        scrollAmount = 0; // Reset scroll position without causing a jump
+    }
+
+    container.scrollLeft = scrollAmount;
+    requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+    </script>
+    <section id="skills" class="py-5 hidden text-black">
+        <div  >
             <h2 class="text-center mb-4">Skills</h2>
-            <div class="row">
-                <div class="col-md-12">
+
+            <div class="scroll-container" id="scrollContainer">
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="80px">
+                        <path fill="#fffoof" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+                    </svg>
+                    <p>GitHub</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80px">
+                        <path fill="#fffoof" d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/>
+                    </svg>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="80px">
+                        <path fill="#fffoof" d="M277.7 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.8 0 242.8 0c21.5 84.5-75.6 110.1-110.7 162.6-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2 24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.2 12.2 0 0 1 -2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.3 17.3 0 0 0 -8.2 6.3 70.5 70.5 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6 .7-18.3-7.9 16-19 26.8-21.3 11.2-2.4 17.7-2 17.7-2-20.3-14.3-131.3 28.1-56.4 40.2C232.8 509.4 401 461.3 348 437.4zM124.4 396c-78.7 22 47.9 67.4 148.1 24.5a185.9 185.9 0 0 1 -28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6 0-.1 11.8 9.7 72.4 13.6 92.2 5.9 233.8-3.3 237.1-46.9 0 0-6.4 16.5-76.2 29.7zM260.6 353c-59.2 11.4-93.5 11.1-136.8 6.6-33.5-3.5-11.6-19.7-11.6-19.7-86.8 28.8 48.2 61.4 169.5 25.9a60.4 60.4 0 0 1 -21.1-12.8z"/>
+                    </svg>
+                    <p>Java</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="90px">
+                        <path fill="#fffoof" d="M333.5 201.4c0-22.1-15.6-34.3-43-34.3h-50.4v71.2h42.5C315.4 238.2 333.5 225 333.5 201.4zM517 188.6c-9.5-30.9-10.9-68.8-9.8-98.1c1.1-30.5-22.7-58.5-54.7-58.5H123.7c-32.1 0-55.8 28.1-54.7 58.5c1 29.3-.3 67.2-9.8 98.1c-9.6 31-25.7 50.6-52.2 53.1v28.5c26.4 2.5 42.6 22.1 52.2 53.1c9.5 30.9 10.9 68.8 9.8 98.1c-1.1 30.5 22.7 58.5 54.7 58.5h328.7c32.1 0 55.8-28.1 54.7-58.5c-1-29.3 .3-67.2 9.8-98.1c9.6-31 25.7-50.6 52.1-53.1v-28.5C542.7 239.2 526.5 219.6 517 188.6zM300.2 375.1h-97.9V136.8h97.4c43.3 0 71.7 23.4 71.7 59.4c0 25.3-19.1 47.9-43.5 51.8v1.3c33.2 3.6 55.5 26.6 55.5 58.3C383.4 349.7 352.1 375.1 300.2 375.1zM290.2 266.4h-50.1v78.4h52.3c34.2 0 52.3-13.7 52.3-39.5C344.7 279.6 326.1 266.4 290.2 266.4z"/>
+                    </svg>
+                    <p>Bootstrap 5</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80px">
+                        <path fill="#fffoof" d="M439.6 236.1L244 40.5a28.9 28.9 0 0 0 -40.8 0l-40.7 40.6 51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.2 199v121.9c25.3 12.5 22.3 41.9 9.1 55a34.3 34.3 0 0 1 -48.6 0c-17.6-17.6-11.1-46.9 11.3-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1a28.9 28.9 0 0 0 0 40.8l195.6 195.6a28.9 28.9 0 0 0 40.8 0l194.7-194.7a28.9 28.9 0 0 0 0-40.8z"/>
+                    </svg>
+                    <p>git</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80px">
+                        <path fill="#fffoof" d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4 .1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3 .1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>
+                    </svg>
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="media/portfolio_images/imageee.png" alt="hi" width="80px">
+                    <p>HTML 5</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="70px">
+                        <path fill="#fffoof" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"/>
+                    </svg>
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="media/portfolio_images/mariadb.png" alt="hi" width="76px">
+                    <p>Mariadb <br> Mysql</p>
+                </div>
+                
+
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="60px">
+                        <path fill="#fffoof" d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
+                    </svg>
+                    <p>CLI usage</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="60px">
+                        <path fill="#fffoof" d="M429.5 236.3L291.7 374.1 429.5 512H272l-59.1-59.1-78.8-78.8L272 236.3H429.5zM272 0L16 256l78.8 78.8L429.5 0H272z"/>
+                    </svg>
+                    <p>flutter</p>
+                </div>
+                <div class="skill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="80px">
+                        <path fill="#fffoof" d="M418.2 177.2c-5.4-1.8-10.8-3.5-16.2-5.1 .9-3.7 1.7-7.4 2.5-11.1 12.3-59.6 4.2-107.5-23.1-123.3-26.3-15.1-69.2 .6-112.6 38.4-4.3 3.7-8.5 7.6-12.5 11.5-2.7-2.6-5.5-5.2-8.3-7.7-45.5-40.4-91.1-57.4-118.4-41.5-26.2 15.2-34 60.3-23 116.7 1.1 5.6 2.3 11.1 3.7 16.7-6.4 1.8-12.7 3.8-18.6 5.9C38.3 196.2 0 225.4 0 255.6c0 31.2 40.8 62.5 96.3 81.5 4.5 1.5 9 3 13.6 4.3-1.5 6-2.8 11.9-4 18-10.5 55.5-2.3 99.5 23.9 114.6 27 15.6 72.4-.4 116.6-39.1 3.5-3.1 7-6.3 10.5-9.7 4.4 4.3 9 8.4 13.6 12.4 42.8 36.8 85.1 51.7 111.2 36.6 27-15.6 35.8-62.9 24.4-120.5-.9-4.4-1.9-8.9-3-13.5 3.2-.9 6.3-1.9 9.4-2.9 57.7-19.1 99.5-50 99.5-81.7 0-30.3-39.4-59.7-93.8-78.4zM282.9 92.3c37.2-32.4 71.9-45.1 87.7-36 16.9 9.7 23.4 48.9 12.8 100.4-.7 3.4-1.4 6.7-2.3 10-22.2-5-44.7-8.6-67.3-10.6-13-18.6-27.2-36.4-42.6-53.1 3.9-3.7 7.7-7.2 11.7-10.7zM167.2 307.5c5.1 8.7 10.3 17.4 15.8 25.9-15.6-1.7-31.1-4.2-46.4-7.5 4.4-14.4 9.9-29.3 16.3-44.5 4.6 8.8 9.3 17.5 14.3 26.1zm-30.3-120.3c14.4-3.2 29.7-5.8 45.6-7.8-5.3 8.3-10.5 16.8-15.4 25.4-4.9 8.5-9.7 17.2-14.2 26-6.3-14.9-11.6-29.5-16-43.6zm27.4 68.9c6.6-13.8 13.8-27.3 21.4-40.6s15.8-26.2 24.4-38.9c15-1.1 30.3-1.7 45.9-1.7s31 .6 45.9 1.7c8.5 12.6 16.6 25.5 24.3 38.7s14.9 26.7 21.7 40.4c-6.7 13.8-13.9 27.4-21.6 40.8-7.6 13.3-15.7 26.2-24.2 39-14.9 1.1-30.4 1.6-46.1 1.6s-30.9-.5-45.6-1.4c-8.7-12.7-16.9-25.7-24.6-39s-14.8-26.8-21.5-40.6zm180.6 51.2c5.1-8.8 9.9-17.7 14.6-26.7 6.4 14.5 12 29.2 16.9 44.3-15.5 3.5-31.2 6.2-47 8 5.4-8.4 10.5-17 15.5-25.6zm14.4-76.5c-4.7-8.8-9.5-17.6-14.5-26.2-4.9-8.5-10-16.9-15.3-25.2 16.1 2 31.5 4.7 45.9 8-4.6 14.8-10 29.2-16.1 43.4zM256.2 118.3c10.5 11.4 20.4 23.4 29.6 35.8-19.8-.9-39.7-.9-59.5 0 9.8-12.9 19.9-24.9 29.9-35.8zM140.2 57c16.8-9.8 54.1 4.2 93.4 39 2.5 2.2 5 4.6 7.6 7-15.5 16.7-29.8 34.5-42.9 53.1-22.6 2-45 5.5-67.2 10.4-1.3-5.1-2.4-10.3-3.5-15.5-9.4-48.4-3.2-84.9 12.6-94zm-24.5 263.6c-4.2-1.2-8.3-2.5-12.4-3.9-21.3-6.7-45.5-17.3-63-31.2-10.1-7-16.9-17.8-18.8-29.9 0-18.3 31.6-41.7 77.2-57.6 5.7-2 11.5-3.8 17.3-5.5 6.8 21.7 15 43 24.5 63.6-9.6 20.9-17.9 42.5-24.8 64.5zm116.6 98c-16.5 15.1-35.6 27.1-56.4 35.3-11.1 5.3-23.9 5.8-35.3 1.3-15.9-9.2-22.5-44.5-13.5-92 1.1-5.6 2.3-11.2 3.7-16.7 22.4 4.8 45 8.1 67.9 9.8 13.2 18.7 27.7 36.6 43.2 53.4-3.2 3.1-6.4 6.1-9.6 8.9zm24.5-24.3c-10.2-11-20.4-23.2-30.3-36.3 9.6 .4 19.5 .6 29.5 .6 10.3 0 20.4-.2 30.4-.7-9.2 12.7-19.1 24.8-29.6 36.4zm130.7 30c-.9 12.2-6.9 23.6-16.5 31.3-15.9 9.2-49.8-2.8-86.4-34.2-4.2-3.6-8.4-7.5-12.7-11.5 15.3-16.9 29.4-34.8 42.2-53.6 22.9-1.9 45.7-5.4 68.2-10.5 1 4.1 1.9 8.2 2.7 12.2 4.9 21.6 5.7 44.1 2.5 66.3zm18.2-107.5c-2.8 .9-5.6 1.8-8.5 2.6-7-21.8-15.6-43.1-25.5-63.8 9.6-20.4 17.7-41.4 24.5-62.9 5.2 1.5 10.2 3.1 15 4.7 46.6 16 79.3 39.8 79.3 58 0 19.6-34.9 44.9-84.8 61.4zm-149.7-15c25.3 0 45.8-20.5 45.8-45.8s-20.5-45.8-45.8-45.8c-25.3 0-45.8 20.5-45.8 45.8s20.5 45.8 45.8 45.8z"/>
+                    </svg>
+                    <p>React JS <br> in progress...</p>
+                </div>
+                <div class="skill">
+                     <img src="media/portfolio_images/imagec.png" alt="hi" width="80px">
+                    <p> Cloud knowledge </p>
+                </div>
+
+                <div class="skill">
+
+                    <svg viewBox="0 0 128 128" width="80px">
+                        <path fill="#fffoof" d="M59.448 0h20.93v96.88c-10.737 2.04-18.62 2.855-27.181 2.855-25.551-.001-38.87-11.551-38.87-33.705 0-21.338 14.135-35.2 36.015-35.2 3.398 0 5.98.272 9.106 1.087zm0 48.765c-2.446-.815-4.485-1.086-7.067-1.086-10.6 0-16.717 6.523-16.717 17.939 0 11.145 5.845 17.26 16.582 17.26 2.309 0 4.212-.136 7.202-.542z"></path>
+                                            <path fill="#fffoof" d="M113.672 32.321V80.84c0 16.717-1.224 24.735-4.893 31.666-3.398 6.661-7.883 10.873-17.124 15.494l-19.435-9.241c9.242-4.35 13.726-8.153 16.58-14 2.99-5.979 3.943-12.91 3.943-31.122V32.321zM92.742.111h20.93v21.474h-20.93z"></path>
+                    </svg>
+                    <p>Django</p>
+                </div>
+                <div class="skill">
+                    <svg viewBox="0 0 128 128" width="80px">
+                        <path fill-rule="evenodd" fill="#fffoof" d="M90.767 127.126a7.968 7.968 0 0 0 6.35-.244l26.353-12.681a8 8 0 0 0 4.53-7.209V21.009a8 8 0 0 0-4.53-7.21L97.117 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026L15.6 32.013a5.328 5.328 0 0 0-6.807.302l-7.048 6.411a5.335 5.335 0 0 0-.006 7.888L20.796 64 1.74 81.387a5.336 5.336 0 0 0 .006 7.887l7.048 6.411a5.327 5.327 0 0 0 6.807.303l21.974-16.68 50.45 46.025a7.96 7.96 0 0 0 2.743 1.793Zm5.252-92.183L57.74 64l38.28 29.058V34.943Z" clip-rule="evenodd"></path>
+                    </svg>
+                    <p>VS code usage</p>
+                </div>
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+                <div class="row width-100">
+                    
+                
                     <ul class="list-inline text-center">
                         <li class="list-inline-item mx-2">Agile</li>
                         <li class="list-inline-item mx-2">CI/CD</li>
@@ -272,7 +401,7 @@
                         <li class="list-inline-item mx-2">MySQL</li>
                         <li class="list-inline-item mx-2">Data Structures</li>
                     </ul>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -292,6 +421,19 @@
             </div>
         </div>
     </section>
+    <section id="collaborate" class="py-5">
+        <div class="container">
+            <i class="fa-solid fa-sparkles"></i>
+            <h1 class="text-center mb-4 PixelifySans">Contact Me</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h3 class="mb-3">If you'd like to collaborate, feel free to email me!</h3>
+                    <a href="mailto:ameramohsen.silver@gmail.com" class="btn btn-outline-secondary pt-3" style="width: 90px; height: 40px;">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         const elements = document.querySelectorAll('.hidden');
 

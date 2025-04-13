@@ -5,8 +5,9 @@
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
+                  <img src="{{ instance.image.url }}" alt="" style="aspect-ratio: 16 / 9; object-fit: cover; width: 100%;">          
+
                     <article class="p-4">
-                        <img src="{{ instance.image }}" alt="">
                         <header class="mb-4 px-4">
                             <h1 class="text-start pt-5">{{ instance.title }}</h1>
                             <p class="text-muted text-start pb-5">By {{ instance.author }} | Published on {{ instance.created_at|date:"F d, Y" }}</p>

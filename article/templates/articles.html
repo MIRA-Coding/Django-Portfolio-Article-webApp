@@ -1,10 +1,15 @@
 {% extends "base.html" %}
-
+<!-- - tags,-->
 {% block content %}
 {% load static %}
+
 <script src="{% static 'js/live_search.js' %}"></script>
 <title>Blog Home</title>
 <style>
+    #h1{
+        font-family: 'Pixelify Sans', sans-serif;
+        font-size: 60px;
+    }
     #tags {
         /* The background color will be managed dynamically by JavaScript */
             font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -14,6 +19,8 @@
             padding: 4px 10px;
            
             
+            
+
         }
         #tags:hover{
             
@@ -22,16 +29,98 @@
             
             transition: 0.5s;
                        }
+
+/* Input bar hover effect */
+.search-hover {
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  padding: 5px 36px 5px 40px; /* Add padding to make space for the icon */
+  transition: all 0.5s;
+}
+
+.search-hover:focus {
+  width: 300px;
+  padding: 5px 50px 5px 50px; 
+transition: opacity 5s ease; /* Smooth transition for placeholder */
+opacity: 1; /* Default opacity */
+}
+
+.search-hover:focus::placeholder {
+opacity: 0; /* Gradually fade out placeholder on focus */
+}
+.search-hover:hover {
+  width: 300px;
+  padding: 5px 50px 5px 50px; 
+
+  left: 20px; 
+  fill: #9d82a0; 
+}
+
+.search-hover::placeholder {
+  padding-left: 1px; /* Add padding to the placeholder to avoid overlap with the icon */
+}
+
+/* Position the search icon */
+.position-relative {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 26px; /* Position the icon inside the input */
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  fill: #8e8e8e; /* Icon color */
+  pointer-events: none; /* Prevent the icon from blocking input clicks */
+  transition: all 0.4s; /* Smooth transition for icon movement */
+}
+
+.search-hover:focus + .search-icon,
+.search-hover:hover + .search-icon {
+    left: 20px; /* Move the icon slightly to the left on focus or hover */
+    fill: #b2b2b2; /* Change icon color on focus or hover */
+}
+
+/* Center the input bar in the row */
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure it takes the full height of the row */
+}
     </style>
-
-
+    
+    
     <!-- Page header with logo and tagline -->
-    <header class="py-5 bg-light border-bottom mt-5">
+    <header class="py-5 bg-light border-bottom mt-5 mb-5">
         <div class="container text-center my-5 mt-5">
-            <h1 class="fw-bolder mt-5">Welcome to my Article Home</h1>
+            <h1 id="h1" class="fw-bolder mt-5 ">Welcome to my Article Home</h1>
             <p class="lead mb-0 text-black-50 text-secondary">this is the world of tech. join us by <a href="{% url 'subscribe' %}">subscribe</a>  </p>
         </div>
-       
+
+        <!-- search bar-->
+        <div class="row">
+            <div id="center" class="d-flex justify-content-center align-items-center">
+              <div class="position-relative">
+                <input type="text" class="search-hover searchBar" name="" placeholder="Search here..." />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-icon">
+                  <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        
+
+        </div>
+        
     </header>
 
     <!-- Page content -->
@@ -43,16 +132,15 @@
 
                 
                 <div class="card mb-4">
-                    <a href="#!">
-                        <img class="card-img-top" src="https://i.pinimg.com/originals/34/18/f8/3418f86372f2bf61dc15f811d88ad657.gif" alt="Featured Post">
-                    </a>
+                    <img class="card-img-top" src="image.png" alt="">
+                    
                     <div class="card-body">
                         <div class="small text-muted">January 1, 2023</div>
                         <h2 class="card-title">My Story with first websit</h2>
                         <p class="card-text">
                             Can you believe that I have been working on my first website which is this 'portfolio' for over a months? It has been a long and challenging journey as self learned, but I am proud of what I have accomplished. From learning HTML, CSS and bootstrap to JavaScript and finally with Django framework I take it as course with Tuwaiq Acadimy, I have gained so much knowledge and experience along the way. I can't wait to share my story with you all!
                         </p>
-                        <a class="btn btn-primary" href="#!">Read more →</a>
+                        <a class="btn btn-primary" href="{% url 'mainStory' %}">Read more →</a>
                     </div>
                 </div>
 
@@ -75,7 +163,7 @@
                 </div>
 
                 <!-- Pagination NEED FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-                <nav aria-label="Pagination">
+                <!-- <nav aria-label="Pagination">
                     <hr class="my-0">
                     <ul class="pagination justify-content-center my-4">
                         <li class="page-item {% if not has_previous %}disabled{% endif %}">
@@ -90,7 +178,7 @@
                             <a class="page-link" href="?page={{ page_number|add:1 }}">Older</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
 
             </div>
 
@@ -98,14 +186,7 @@
             <div class="col-lg-4">
 
                 <!-- Search widget !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-                <div class="card mb-4">
-                    <div class="card-header">Search</div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
-                        </div>
-                    </div>
-                </div>
+                
 
                 <!-- Tags widget -->
                 <div class="card mb-4">
@@ -143,23 +224,17 @@
                 </div>
 
                 <!-- Side widget -->
-                <div class="card mb-4">
+                <!-- <div class="card mb-4">
                     <div class="card-header">Side Widget</div>
                     <div class="card-body">
                         You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
-        </div>
-    </footer>
     
 
 

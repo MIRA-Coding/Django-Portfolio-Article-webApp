@@ -6,6 +6,8 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 
@@ -52,16 +54,18 @@ def render_generated_article(request, article_title):
     return render(request, f"generated_articles/{article_title}.html", context)
 
 
-
-
-def search_articles(request):
-    query = request.GET.get('q', '')  # Get the search query
-    if query:
-        # Filter articles by title
-        posts = Article.objects.filter(title__icontains=query)
-    else:
-        # Return all articles if no query
-        posts = Article.objects.all()
-
-    # Render the same template with filtered posts
-    return render(request, 'articles.html', {'posts': posts})
+@csrf_exempt
+def fetch_all_articles(request):
+    # Fetch all articles from the database
+    articles = Article.objects.all()
+    results = [
+        {
+            'title': article.title,
+            'content': article.content[:100],  # Limit content to 100 characters
+            'created_at': article.created_at.strftime('%B %d, %Y'),
+            'url': f"/articles/{article.title.replace(' ', '_')}/",
+            'image': article.image.url if article.image else None,
+        }
+        for article in articles
+    ]
+    return JsonResponse({'articles': results})
