@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>base</title>
+    <title>{% block title %}base{% endblock %}</title>
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -39,16 +39,20 @@
 
         .navbar {
             background-color: rgba(52, 51, 51, 0.692) !important;
-
+        }
+        .custom-navbar {
+            max-width: 100%;
         }
     </style>
 </head>
 
-<body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark "
-        style="background-color: rgba(52, 51, 51, 0.692)!important;width: 100;width: 100% important;">
+
+<body dir="ltr" >
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar">
         <div class="container-fluid">
             <a class="navbar-brand pe-3" href="{% url 'render_portf' %}">Portfolio</a>
+       
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -74,6 +78,8 @@
     </nav>
 
 
+
+
     {% block content %}{% endblock %}
 
 
@@ -86,6 +92,18 @@
         </div>
     </footer>
 
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var toggler = document.querySelector('.navbar-toggler');
+        var collapse = document.getElementById('navbarCollapse');
+        if (toggler && collapse) {
+            toggler.addEventListener('click', function () {
+                collapse.classList.toggle('show');
+            });
+        }
+    });
+</script>
 
 
 </body>

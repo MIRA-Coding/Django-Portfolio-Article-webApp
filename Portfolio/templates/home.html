@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
+{% block title %}Amirah Mohsen Portfolio{% endblock %}
+
 {% block content %}
 {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirah Mohsen Portfolio</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+
+
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
     <script src="{% static 'js/home.js' %}"></script>
 
-</head>
 
-<body dir="ltr" class="bg-dark text-light">
     <header class="" style="background: #21181b;  position: relative; ">
         <div class="containerr">
             <div class="row align-items-center  align-items-center">
@@ -24,7 +24,7 @@
                     </div>
                     <script>
                         const textElement = document.getElementById('typing-text');
-                        const texts = ["Welcome Tuwaiq", "Amirah Mohsen",];
+                        const texts = ["Welcome to my world", "I'm Amirah Mohsen",];
                         let textIndex = 0;
                         let charIndex = 0;
 
@@ -54,8 +54,8 @@
                         type();
                     </script>
                     <div class="row" style="position: sticky; top: 2px; z-index: 10; ">
-                        <p class="text-body-secondary font-monospace text-white-50 text-lg-center">Senior Software
-                            Engineer &middot; Programmer &middot; Freelancer</p>
+                        <p class="text-body-secondary font-monospace text-white-50 text-lg-center">Software
+                            Engineer &middot; Web, AI Developer &middot; Freelancer </p>
                         <div class="d-flex justify-content-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" viewBox="0 0 448 512">
                                 <path fill="#ffffff"
@@ -180,9 +180,9 @@
             </div>
         </div>
     </section>
-    <section id="experience" class="py-5 hidden">
+    <section id="Volunteering" class="py-5 hidden">
         <div class="container">
-            <h2 class="text-center mb-4">Experience</h2>
+            <h2 class="text-center mb-4">Volunteering</h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card">
@@ -463,7 +463,7 @@
                 <div class="col-md-6 text-center">
                     <h3 class="mb-3">If you'd like to collaborate, feel free to email me!</h3>
                     <a href="mailto:ameramohsen.silver@gmail.com" class="btn btn-outline-secondary pt-3"
-                        style="width: 90px; height: 40px;">Send Email</a>
+                        style="">Send Email</a>
                 </div>
             </div>
         </div>
@@ -484,5 +484,8 @@
             observer.observe(element);
         });
     </script>
-</body>
+
+
+
+
 {% endblock %}
