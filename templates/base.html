@@ -1,111 +1,105 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
-
+<html lang="en" class="h-full scroll-smooth">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}base{% endblock %}</title>
-    {% load django_bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-        </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Amirah Mohsen | Portfolio{% endblock %}</title>
+
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techDark: '#0B0F19',
+                        techGreen: '#00FF66',
+                        techOrange: '#FF6B35',
+                        glassBg: 'rgba(17, 24, 39, 0.7)',
+                    },
+                    fontFamily: {
+                        mono: ['"Space Mono"', 'monospace'],
+                        pixel: ['"Pixelify Sans"', 'sans-serif'],
+                        sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                },
+            },
+        };
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Pixelify+Sans:wght@400..700&family=Space+Mono&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Pixelify+Sans:wght@400..700&family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Icons only (no Bootstrap CSS/JS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Critical fallbacks if CDN is slow or blocked -->
     <style>
-        html {
-            scroll-behavior: smooth;
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            background-color: #0B0F19;
+            color: #F3F4F6;
         }
-
-        main>.container {
-            padding: 60px 0;
-            margin-bottom: 5rem;
+        body {
+            font-family: 'Work Sans', system-ui, sans-serif;
+            overflow-x: hidden;
         }
-
-        .sticky-footer {
-            position: sticky;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+        .font-mono { font-family: 'Space Mono', monospace; }
+        .font-pixel { font-family: 'Pixelify Sans', sans-serif; }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .navbar {
-            background-color: rgba(52, 51, 51, 0.692) !important;
+        #skills-track svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            max-width: 2.5rem;
+            max-height: 2.5rem;
+            flex-shrink: 0;
         }
-        .custom-navbar {
-            max-width: 100%;
-        }
+        img { max-width: 100%; height: auto; }
     </style>
+
+    {% block bootstrap_assets %}{% endblock %}
+    {% block extra_head %}{% endblock %}
 </head>
+<body class="flex min-h-full flex-col bg-techDark font-sans text-gray-100 antialiased">
 
+    <nav id="site-nav" class="glass-panel fixed top-4 left-1/2 z-50 flex w-[92%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl px-6 py-3 transition-all duration-300">
+        <a class="font-pixel text-xl font-bold tracking-wider text-white transition-colors hover:text-techGreen" href="{% url 'render_portf' %}">AMIRAH.DEV</a>
 
-<body dir="ltr" >
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand pe-3" href="{% url 'render_portf' %}">Portfolio</a>
-       
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active " aria-current="page"
-                            href="{% url 'render_portf' %}#aboutMe">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'render_article' %}">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'render_portf' %}#collaborate">Let's Collaborate</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="hidden items-center space-x-8 font-mono text-sm md:flex">
+            <a class="text-gray-300 transition-colors hover:text-techGreen" href="{% url 'render_portf' %}#about">About</a>
+            <a class="text-gray-300 transition-colors hover:text-techGreen" href="{% url 'render_portf' %}#education">Education</a>
+            <a class="text-gray-300 transition-colors hover:text-techGreen" href="{% url 'render_article' %}">Articles</a>
+            <a class="rounded-xl border border-techOrange/30 px-4 py-2 font-semibold text-techOrange transition-all hover:bg-techOrange/10" href="{% url 'render_portf' %}#collaborate">Let's Collaborate</a>
         </div>
     </nav>
 
+    <main class="flex-grow pt-24">
+        {% block content %}{% endblock %}
+    </main>
 
-
-
-    {% block content %}{% endblock %}
-
-
-
-
-
-    <footer class="footer mt-auto py-3 bg-light ">
-        <div class="container-fluid  text-center text-gray-500 text-sm ">
-            <p>&copy; 2025 Amira mohsen. All rights reserved.</p>
-        </div>
+    <footer class="border-t border-white/5 bg-black/40 py-6 text-center font-mono text-sm text-gray-500">
+        <p>&copy; 2026 Amirah Mohsen. Built with Django &amp; GSAP.</p>
     </footer>
 
-
+    <!-- GSAP (end of body so DOM is ready) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var toggler = document.querySelector('.navbar-toggler');
-        var collapse = document.getElementById('navbarCollapse');
-        if (toggler && collapse) {
-            toggler.addEventListener('click', function () {
-                collapse.classList.toggle('show');
-            });
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
         }
-    });
-</script>
-
-
+    </script>
+    {% block extra_js %}{% endblock %}
 </body>
-
 </html>

@@ -1,35 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("scrollContainer");
-  if (!container) {
-    console.error('Element with ID "scrollContainer" not found.');
-    return;
-  }
+  const navbar = document.getElementById("site-nav");
+  if (!navbar) return;
 
-  const items = container.children;
-  const itemCount = items.length;
-
-  // Clone items to create a seamless scrolling effect
-  for (let i = 0; i < 2; i++) {
-    for (let j = 0; j < itemCount; j++) {
-      const clone = items[j].cloneNode(true);
-      container.appendChild(clone);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.style.transform = "translate(-50%, 5px)";
+      navbar.style.background = "rgba(11, 15, 25, 0.92)";
+    } else {
+      navbar.style.transform = "translate(-50%, 0)";
+      navbar.style.background = "rgba(15, 23, 42, 0.65)";
     }
-  }
-
-  let scrollAmount = 0;
-  const scrollSpeed = 0.5;
-
-  function autoScroll() {
-    scrollAmount += scrollSpeed;
-
-    // Check if the scroll has reached the end of the original content
-    if (scrollAmount >= container.scrollWidth / 3) {
-      scrollAmount = 0; // Reset scroll position without causing a jump
-    }
-
-    container.scrollLeft = scrollAmount;
-    requestAnimationFrame(autoScroll);
-  }
-
-  autoScroll();
+  });
 });

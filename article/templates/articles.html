@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block bootstrap_assets %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
 <!-- - tags,-->
 {% block content %}
 {% load static %}
