@@ -6,7 +6,7 @@ IN ARTICLES:::
 - the subscribe at the same page
 
 IN THE HOME PORTFILIO:::
-- the header vidio
+- the header vedio
 - correct typing effect in the phone
 - the skill section
 - the Education include SIC Campus

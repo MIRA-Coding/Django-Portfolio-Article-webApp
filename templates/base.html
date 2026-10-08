@@ -28,8 +28,12 @@
                 },
             },
         };
-    </script>
 
+
+        const glow = document.getElementById("cursor-glow");
+
+    </script>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Pixelify+Sans:wght@400..700&family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -66,13 +70,34 @@
             flex-shrink: 0;
         }
         img { max-width: 100%; height: auto; }
-    </style>
+        /* تطبيقه على الصفحة بالكامل */
+/* 1. المؤشر الأساسي (أخضر نيون) */
+/* 1. المؤشر الأساسي: مائل باللون الأخضر النيون */
+body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 34 34' fill='none'%3E%3Cg transform='rotate(-28 16 16)'%3E%3Cpath d='M16 5 L25 25 L16 20 L7 25 Z' stroke='%2300bF66' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E") 4 4, auto;
+}
 
+/* 2. المؤشر التفاعلي: مائل باللون الأبيض مع وهج وظل مضاعف قوي */
+a, 
+button, 
+[role="button"], 
+input[type="submit"], 
+input[type="button"],
+input[type="reset"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 34 34' fill='none'%3E%3Cdefs%3E%3Cfilter id='glow' x='-40%25' y='-40%25' width='180%25' height='180%25'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='1.6' flood-color='%23FFFFFF' flood-opacity='1'/%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='3.2' flood-color='%23FFFFFF' flood-opacity='0.8'/%3E%3C/filter%3E%3C/defs%3E%3Cg transform='rotate(-28 16 16)'%3E%3Cpath d='M16 5 L25 25 L16 20 L7 25 Z' stroke='%23FFFFFF' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' filter='url(%23glow)'/%3E%3C/g%3E%3C/svg%3E") 4 4, pointer !important;
+}
+    </style>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     {% block bootstrap_assets %}{% endblock %}
     {% block extra_head %}{% endblock %}
 </head>
-<body class="flex min-h-full flex-col bg-techDark font-sans text-gray-100 antialiased">
 
+
+
+
+<body class="flex min-h-full flex-col bg-techDark font-sans text-gray-100 antialiased">
+<!-- عنصر الوهج: pointer-events-none يمنعه من حجب النقر عن الأزرار -->
+<!-- <div id="cursor-glow" class="pointer-events-none fixed top-0 left-0 z-50 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-techGreen/20 blur-[15px] transition-transform duration-75 ease-out will-change-transform hidden md:block"></div> -->
     <nav id="site-nav" class="glass-panel fixed top-4 left-1/2 z-50 flex w-[92%] max-w-6xl -translate-x-1/2 items-center justify-between rounded-2xl px-6 py-3 transition-all duration-300">
         <a class="font-pixel text-xl font-bold tracking-wider text-white transition-colors hover:text-techGreen" href="{% url 'render_portf' %}">AMIRAH.DEV</a>
 
@@ -99,7 +124,20 @@
         if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             gsap.registerPlugin(ScrollTrigger);
         }
+
+
+
+//         document.addEventListener("DOMContentLoaded", () => {
+//     const glow = document.getElementById("cursor-glow");
+//     if (!glow) return;
+
+//     window.addEventListener("mousemove", (e) => {
+//         glow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+//     });
+// });
     </script>
     {% block extra_js %}{% endblock %}
+
+    
 </body>
 </html>

@@ -4,15 +4,20 @@
 {% block title %}Amirah Mohsen | Portfolio{% endblock %}
 
 {% block content %}
-<div class="relative w-full min-h-screen overflow-hidden bg-techDark text-gray-100">
+<div class="relative w-full overflow-hidden bg-techDark text-gray-100">
 
     <div class="pointer-events-none absolute top-20 left-1/4 -z-10 h-96 w-96 rounded-full bg-techGreen/5 blur-[140px]"></div>
     <div class="pointer-events-none absolute top-[60vh] right-1/4 -z-10 h-80 w-80 rounded-full bg-techOrange/5 blur-[120px]"></div>
 
-    <header class="relative z-10 container mx-auto flex min-h-[85vh] max-w-6xl flex-col items-center justify-between px-6 py-12 md:flex-row">
-        <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
+    <!-- 1. زيادة pt-24 في الجوال وإرجاعها md:py-12 في اللابتوب -->
+    <header class="relative z-10 container mx-auto flex   min-h-[50vh] max-w-6xl flex-col items-center justify-center md:justify-between px-6 pt-28 pb-12 md:py-5 md:flex-row">
+        
+        <!-- 2. حاوية النص: z-10 لضمان ظهور النص فوق الـ SVG دائماً -->
+        <div class="relative z-10 w-full space-y-6 text-center md:w-1/2 md:text-left">
             <div class="inline-block rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-techGreen">
-                Available for Freelance
+                <a href="#collaborate" >
+                    Available for Freelance
+                </a>
             </div>
 
             <h1 class="min-h-[70px] text-4xl font-extrabold tracking-tight text-white md:text-5xl" id="typing-text"></h1>
@@ -33,12 +38,31 @@
             </div>
         </div>
 
-        <div class="relative mt-12 flex w-full justify-center md:mt-0 md:w-1/2 md:justify-end">
-            <div class="absolute inset-0 animate-pulse rounded-full bg-gradient-to-tr from-techGreen/10 to-transparent opacity-40 blur-2xl"></div>
-            <img class="relative z-10 w-[350px] max-w-full object-contain drop-shadow-[0_0_30px_rgba(0,255,102,0.1)] md:w-[450px]"
-                 src="{% static 'portfolio_images/imagee.PNG' %}" alt="Amirah Mohsen" width="450" height="450">
+        <!-- 3. حاوية الـ SVG: absolute خلف النص في الجوال، و relative بجانب النص في الشاشات الأكبر -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30 md:opacity-100 md:pointer-events-auto md:relative md:inset-auto md:z-auto md:mt-0 md:w-1/2 md:justify-end">
+            
+            <div class="absolute inset-0 animate-spin-slow rounded-full bg-gradient-to-tr from-techGreen/10 to-transparent blur-2xl"></div> 
+            <!-- to slow its move fix the  -->
+
+            <dotlottie-player 
+                src="/media/portfolio_images/Future_tech.lottie" 
+                background="transparent" 
+                speed="0.3" 
+                class="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] max-w-full aspect-square"
+                loop 
+                autoplay>
+            </dotlottie-player>
         </div>
+
     </header>
+</div>
+
+
+
+
+
+
+
 
     <section id="about" class="relative z-10 container mx-auto max-w-6xl border-t border-white/5 px-6 py-24">
         <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
@@ -52,12 +76,15 @@
                 </p>
             </div>
             <div class="reveal-element flex justify-center">
-                <div class="glass-panel rounded-3xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-md transition-all duration-300 hover:border-techGreen/30">
+                <div> <!--class="glass-panel rounded-3xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-md transition-all duration-300 hover:border-techGreen/30"-->
                     <img src="{% static 'portfolio_images/left.png' %}" alt="Tech Frame" class="h-32 w-32 object-contain opacity-80" width="128" height="128">
                 </div>
             </div>
         </div>
     </section>
+
+
+
 
     <section id="skills" class="relative z-10 overflow-hidden border-y border-white/5 bg-black/20 py-16">
         <h2 class="mb-10 text-center font-mono text-sm uppercase tracking-[0.3em] text-gray-400">Tech Stack &amp; Tools</h2>
@@ -73,12 +100,16 @@
         </div>
     </section>
 
+
+
+
+
     <section id="education" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24">
         <h2 class="mb-12 text-center font-pixel text-3xl font-bold md:text-left">
             <span class="mr-2 font-mono text-xl text-techGreen">02.</span> Education
         </h2>
 
-        <div class="glass-panel flex flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/20 md:flex-row">
+        <div class="glass-panel flex flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/50 md:flex-row">
             <div class="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-2xl bg-white/5 p-2">
                 <img class="h-full w-full object-contain" src="{% static 'portfolio_images/image-removebg-preview.png' %}" alt="UQU Logo" width="96" height="96">
             </div>
@@ -98,6 +129,9 @@
             </div>
         </div>
     </section>
+
+
+
 
     <section id="achievements" class="relative z-10 container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-2">
         <div class="reveal-element space-y-6">
@@ -129,9 +163,12 @@
         </div>
     </section>
 
+
+
+
     <section id="collaborate" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24 text-center">
         <div class="glass-panel relative overflow-hidden rounded-3xl border border-white/10 p-12">
-            <div class="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-techOrange/20 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-techOrange/20 blur-3xl"></div>  <!-- هنا الوهج اخليه يتحرك-->
             <i class="bi bi-brightness-high mb-4 inline-block animate-spin-slow text-3xl text-techOrange"></i>
             <h2 class="mb-4 font-pixel text-3xl font-bold text-white md:text-4xl">Launch Your Project Automation</h2>
             <h3 class="mx-auto mb-8 max-w-lg font-mono text-sm leading-relaxed text-gray-300">
@@ -145,6 +182,8 @@
 </div>
 {% endblock %}
 
+
+
 {% block extra_js %}
 <script src="{% static 'js/home.js' %}"></script>
 <script>
@@ -152,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap === "undefined") return;
 
     const textElement = document.getElementById("typing-text");
-    const strings = ["Welcome to my world.", "I'm Amirah Mohsen."];
+    const strings = ["I'm Amirah Mohsen", "Here world of TECH"];
     let strIdx = 0, charIdx = 0, isErasing = false;
 
     function typeAnimation() {
@@ -186,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.to(track, {
             xPercent: -50,
             ease: "none",
-            duration: 15,
+            duration: 20,
             repeat: -1,
         });
     }

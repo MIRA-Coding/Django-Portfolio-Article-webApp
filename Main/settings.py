@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ok+z$&_*)b1!h0a=54n=7ggu#40&bh6%1r8eabpdy*6^^*3=(-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,14 +78,20 @@ WSGI_APPLICATION = 'Main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'articles',
+#         'USER': 'root',
+#         'PASSWORD': '$123456',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'articles',
-        'USER': 'root',
-        'PASSWORD': '$123456',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -127,6 +134,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+# المجلد الذي سيجمع فيه Django الملفات عند النشر
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# تفعيل ضغط وتسريع تحميل الملفات الثابتة ومجسمات الـ 3D
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -137,3 +149,5 @@ import os
 
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  
+
+CSRF_TRUSTED_ORIGINS = ['https://*.koyeb.app']
