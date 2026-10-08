@@ -150,4 +150,4 @@ import os
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  
 
-CSRF_TRUSTED_ORIGINS = ['https://*.koyeb.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
