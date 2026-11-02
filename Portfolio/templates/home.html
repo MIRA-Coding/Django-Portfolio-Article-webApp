@@ -4,53 +4,78 @@
 {% block title %}Amirah Mohsen | Portfolio{% endblock %}
 
 {% block content %}
+
+
+
 <div class="relative w-full overflow-hidden bg-techDark text-gray-100">
 
-    <div class="pointer-events-none absolute top-20 left-1/4 -z-10 h-96 w-96 rounded-full bg-techGreen/5 blur-[140px]"></div>
-    <div class="pointer-events-none absolute top-[60vh] right-1/4 -z-10 h-80 w-80 rounded-full bg-techOrange/5 blur-[120px]"></div>
+    <div class="pointer-events-none absolute top-20 left-1/4 -z-10 h-96 w-96 rounded-full bg-techGreen/5 blur-[140px]">
+    </div>
+    <div
+        class="pointer-events-none absolute top-[60vh] right-1/4 -z-10 h-80 w-80 rounded-full bg-techOrange/5 blur-[120px]">
+    </div>
 
     <!-- 1. زيادة pt-24 في الجوال وإرجاعها md:py-12 في اللابتوب -->
-    <header class="relative z-10 container mx-auto flex   min-h-[50vh] max-w-6xl flex-col items-center justify-center md:justify-between px-6 pt-28 pb-12 md:py-5 md:flex-row">
-        
+    <header
+        class="relative z-10 container mx-auto flex   min-h-[50vh] max-w-6xl flex-col items-center justify-center md:justify-between px-6 pt-28 pb-12 md:py-5 md:flex-row">
+
         <!-- 2. حاوية النص: z-10 لضمان ظهور النص فوق الـ SVG دائماً -->
         <div class="relative z-10 w-full space-y-6 text-center md:w-1/2 md:text-left">
-            <div class="inline-block rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-techGreen">
-                <a href="#collaborate" >
-                    Available for Freelance
+            <div
+                class="inline-block rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-techGreen">
+                <a href="#collaborate">
+                    Available for Volunteer
                 </a>
             </div>
 
-            <h1 class="min-h-[70px] text-4xl font-extrabold tracking-tight text-white md:text-5xl" id="typing-text"></h1>
+            <h1 class="min-h-[70px] text-4xl font-extrabold tracking-tight text-white md:text-5xl" id="typing-text">
+            </h1>
 
             <p class="max-w-lg font-mono text-sm leading-relaxed text-gray-400 md:text-base">
-                Software Engineer <span class="text-techGreen">&middot;</span> Web &amp; AI Developer <span class="text-techGreen">&middot;</span> Creator Mindset
+                Software Engineer <span class="text-techGreen">&middot;</span> Web &amp; AI Developer <span
+                    class="text-techGreen">&middot;</span> Creator Mindset
             </p>
+<!-- <a href="mailto:ameramohsen.silver@gmail.com">
+        <i class="bi bi-envelope" aria-hidden="true"></i>
+        تواصل معي
+    </a>
 
+    <a href="/files/CV.pdf" download
+        class="rounded-xl border border-techOrange px-6 py-3 font-mono text-sm font-semibold text-techOrange transition-colors hover:bg-techOrange hover:text-white">
+        حمّل الـCV
+    </a> -->
             <div class="flex items-center justify-center space-x-6 pt-4 md:justify-start">
-                <a href="mailto:ameramohsen.silver@gmail.com" class="rounded-xl bg-techOrange px-6 py-3 font-mono text-sm font-semibold text-white shadow-lg shadow-techOrange/20 transition-all hover:bg-techOrange/90">
-                    Get In Touch
+                <a href="{% static 'files/AmirahCV.pdf' %}" download
+   class="rounded-xl bg-techOrange px-6 py-3 font-mono text-sm font-semibold text-white shadow-lg shadow-techOrange/20 transition-all hover:bg-techOrange/90">
+      Download My CV
                 </a>
+
+                <!-- <a href="mailto:ameramohsen.silver@gmail.com"
+                    class="rounded-xl bg-techOrange px-6 py-3 font-mono text-sm font-semibold text-white shadow-lg shadow-techOrange/20 transition-all hover:bg-techOrange/90">
+                    Get In Touch
+                </a> -->
                 <div class="flex space-x-4 text-xl text-gray-400">
-                    <a href="#" class="transition-colors hover:text-white" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="transition-colors hover:text-white" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="#" class="transition-colors hover:text-white" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.linkedin.com/in/amirah-mohsen/" class="transition-colors hover:text-white"
+                        aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#https://github.com/MIRA-Coding" class="transition-colors hover:text-white"
+                        aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="mailto:ameramohsen.silver@gmail.com" class="transition-colors hover:text-white" aria-label="Mail"><i class="bi bi-envelope" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
 
         <!-- 3. حاوية الـ SVG: absolute خلف النص في الجوال، و relative بجانب النص في الشاشات الأكبر -->
-        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30 md:opacity-100 md:pointer-events-auto md:relative md:inset-auto md:z-auto md:mt-0 md:w-1/2 md:justify-end">
-            
-            <div class="absolute inset-0 animate-spin-slow rounded-full bg-gradient-to-tr from-techGreen/10 to-transparent blur-2xl"></div> 
+        <div
+            class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30 md:opacity-100 md:pointer-events-auto md:relative md:inset-auto md:z-auto md:mt-0 md:w-1/2 md:justify-end">
+
+            <div
+                class="absolute inset-0 animate-spin-slow rounded-full bg-gradient-to-tr from-techGreen/10 to-transparent blur-2xl">
+            </div>
             <!-- to slow its move fix the  -->
 
-            <dotlottie-player 
-                src="/media/portfolio_images/Future_tech.lottie" 
-                background="transparent" 
-                speed="0.3" 
-                class="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] max-w-full aspect-square"
-                loop 
-                autoplay>
+            <dotlottie-player src="/media/portfolio_images/Future_tech.lottie" background="transparent" speed="0.3"
+                class="w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] max-w-full aspect-square"
+                loop autoplay>
             </dotlottie-player>
         </div>
 
@@ -60,125 +85,673 @@
 
 
 
+                                            <!--------------------- About Me Section ----------------------->
 
 
 
-
-    <section id="about" class="relative z-10 container mx-auto max-w-6xl border-t border-white/5 px-6 py-24">
-        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-            <div class="reveal-element space-y-6">
-                <h2 class="flex items-center font-pixel text-3xl font-bold tracking-tight text-white">
-                    <span class="mr-2 font-mono text-xl text-techGreen">01.</span> About Me
-                </h2>
-                <div class="h-0.5 w-20 bg-techGreen"></div>
-                <p id="aboutMe" class="font-mono text-base leading-relaxed text-gray-300">
-                    I am a passionate senior software engineering student with a strong foundation in architecture systems and custom automated tools. Currently shifting from a traditional mindset to a digital empire creator.
-                </p>
-            </div>
-            <div class="reveal-element flex justify-center">
-                <div> <!--class="glass-panel rounded-3xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-md transition-all duration-300 hover:border-techGreen/30"-->
-                    <img src="{% static 'portfolio_images/left.png' %}" alt="Tech Frame" class="h-32 w-32 object-contain opacity-80" width="128" height="128">
-                </div>
+<section id="about" class="relative z-10 container mx-auto max-w-6xl border-t border-white/5 px-6 py-24">
+    <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div class="reveal-element space-y-6">
+            <h2 class="flex items-center font-pixel text-3xl font-bold tracking-tight text-white">
+                <span class="mr-2 font-mono text-xl text-techGreen">01.</span> About Me
+            </h2>
+            <div class="h-0.5 w-20 bg-techGreen"></div>
+            <p id="aboutMe" class="font-mono text-base leading-relaxed text-gray-300">
+                Aspiring Data Engineer with Strong Analytical & Architectural Thinking. Transitioning from Software
+                Engineering to Data Architecture &multimap; Interested in Remote Roles. </p>
+        </div>
+        <div class="reveal-element flex justify-center">
+            <div>
+                <!--class="glass-panel rounded-3xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-md transition-all duration-300 hover:border-techGreen/30"-->
+                <img src="{% static 'portfolio_images/left.png' %}" alt="Tech Frame"
+                    class="h-32 w-32 object-contain opacity-80" width="128" height="128">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 
+                                            <!--------------------- Skills Section ----------------------->
 
-    <section id="skills" class="relative z-10 overflow-hidden border-y border-white/5 bg-black/20 py-16">
-        <h2 class="mb-10 text-center font-mono text-sm uppercase tracking-[0.3em] text-gray-400">Tech Stack &amp; Tools</h2>
+                                    
 
-        <div class="relative w-full overflow-hidden py-2">
-            <div class="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-r from-techDark to-transparent"></div>
-            <div class="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-l from-techDark to-transparent"></div>
 
-            <div id="skills-track" class="flex w-max items-center gap-16">
-                {% include "partials/skills_row.html" %}
-                {% include "partials/skills_row.html" %}
-            </div>
+<section id="skills" class="relative z-10 overflow-hidden border-y border-white/5 bg-black/20 py-16">
+    <h2 class="mb-10 text-center font-mono text-sm uppercase tracking-[0.3em] text-gray-400">Tech Stack &amp; Tools</h2>
+
+    <div class="relative w-full overflow-hidden py-2">
+        <div
+            class="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-r from-techDark to-transparent">
         </div>
-    </section>
+        <div
+            class="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-l from-techDark to-transparent">
+        </div>
+
+        <div id="skills-track" class="flex w-max items-center gap-16">
+            {% include "partials/skills_row.html" %}
+            {% include "partials/skills_row.html" %}
+        </div>
+    </div>
+</section>
 
 
 
 
 
-    <section id="education" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24">
-        <h2 class="mb-12 text-center font-pixel text-3xl font-bold md:text-left">
-            <span class="mr-2 font-mono text-xl text-techGreen">02.</span> Education
-        </h2>
+                                                <!--------------------- Education Section ----------------------->
 
-        <div class="glass-panel flex flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/50 md:flex-row">
+
+
+<section id="education" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24">
+    <h2 class="mb-12 text-center font-pixel text-3xl font-bold md:text-left">
+        <span class="mr-2 font-mono text-xl text-techGreen">02.</span> Education
+    </h2>
+
+    <div
+        class="glass-panel flex flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/50 md:flex-row">
+        <div class="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-2xl bg-white/5 p-2">
+            <img class="h-full w-full object-contain" src="{% static 'portfolio_images/image-removebg-preview.png' %}"
+                alt="UQU Logo" width="96" height="96">
+        </div>
+        <div class="space-y-3 text-center md:text-left">
+            <div class="flex flex-col justify-between gap-2 md:flex-row md:items-center">
+                <h3 class="font-pixel text-xl font-bold text-white transition-colors hover:text-techGreen">
+                    <a href="https://uqu.edu.sa/" target="_blank" rel="noopener noreferrer">Umm Al-Qura University</a>
+                </h3>
+                <span
+                    class="self-center rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs text-techGreen md:self-auto">
+                    2022 - 2026
+                </span>
+            </div>
+            <p class="font-mono text-sm text-gray-400">Software Engineering Bachelor's Degree &middot; GPA of 3.94 -
+                4.00</p>
+            <p class="max-w-2xl text-sm leading-relaxed text-gray-300">
+                Study practical lifecycle of building software, including team collaboration, project management,
+                quality assurance, architecture, and requirements.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+                                                <!--------------------- Experience Section ----------------------->
+
+<section id="experience" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24">
+    <h2 class="mb-12 text-center font-pixel text-3xl font-bold md:text-left">
+        <span class="mr-2 font-mono text-xl text-techGreen">03.</span> Experience
+    </h2>
+
+    <div id="experience-cards">
+        <!-- البطاقة الأولى -->
+        <div class="experience-card glass-panel flex flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/50 md:flex-row">
             <div class="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-2xl bg-white/5 p-2">
-                <img class="h-full w-full object-contain" src="{% static 'portfolio_images/image-removebg-preview.png' %}" alt="UQU Logo" width="96" height="96">
+                <img
+                    class="h-full w-full object-contain"
+                    src="{% static 'portfolio_images/ieeeuqu.jpg' %}"
+                    alt="UQU Logo"
+                    width="96"
+                    height="96"
+                >
             </div>
+
             <div class="space-y-3 text-center md:text-left">
                 <div class="flex flex-col justify-between gap-2 md:flex-row md:items-center">
                     <h3 class="font-pixel text-xl font-bold text-white transition-colors hover:text-techGreen">
-                        <a href="https://uqu.edu.sa/" target="_blank" rel="noopener noreferrer">Umm Al-Qura University</a>
+                        <a href="https://uqu.edu.sa/" target="_blank" rel="noopener noreferrer">
+                            Vice Chair, Media Committee 
+                        </a>
                     </h3>
                     <span class="self-center rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs text-techGreen md:self-auto">
-                        2022 - Present
+                        2025 - 2026
                     </span>
                 </div>
-                <p class="font-mono text-sm text-gray-400">Software Engineering Bachelor's Degree &middot; Proudly at Level 9</p>
+
+                <p class="font-mono text-sm text-gray-400">
+                    Software Engineering Bachelor's Degree &middot; GPA of 3.94 - 4.00
+                </p>
                 <p class="max-w-2xl text-sm leading-relaxed text-gray-300">
-                    Showcasing advanced expertise in software architectures, full-stack systems engineering, clean code principles, and engineering excellence.
+                    contribute at the Institute of Electrical and Electronics Engineers at the organizing committee. then become  Vice Chair, Media Committee 
                 </p>
             </div>
         </div>
-    </section>
 
+        <!-- البطاقة الثانية -->
+        <div class="experience-card hidden glass-panel flex-col items-center gap-8 rounded-3xl border border-white/5 p-8 transition-all duration-300 hover:border-techGreen/50 md:flex-row">
+            <div class="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-2xl bg-white/5 p-2">
+                <img
+                    class="h-full w-full object-contain"
+                    src="{% static 'portfolio_images/sice.jpg' %}"
+                    alt="UQU Logo"
+                    width="96"
+                    height="96"
+                >
+            </div>
 
-
-
-    <section id="achievements" class="relative z-10 container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-2">
-        <div class="reveal-element space-y-6">
-            <h3 class="font-pixel text-2xl font-bold"><span class="mr-2 font-mono text-techGreen">&middot;</span> Certifications</h3>
-            <div class="grid gap-4">
-                <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/10">
-                    <h4 class="text-base font-bold text-white">Introduction to DevOps &amp; Cloud Computing</h4>
-                    <p class="mt-1 font-mono text-xs text-gray-400">IBM &middot; Dec 2024</p>
+            <div class="space-y-3 text-center md:text-left">
+                <div class="flex flex-col justify-between gap-2 md:flex-row md:items-center">
+                    <h3 class="font-pixel text-xl font-bold text-white transition-colors hover:text-techGreen">
+                        <a href="https://uqu.edu.sa/" target="_blank" rel="noopener noreferrer">
+                            AI Program Participant
+                        </a>
+                    </h3>
+                    <span class="self-center rounded-full border border-techGreen/20 bg-techGreen/10 px-3 py-1 font-mono text-xs text-techGreen md:self-auto">
+                        2022 - 2026
+                    </span>
                 </div>
-                <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/10">
-                    <h4 class="text-base font-bold text-white">Learn Git: Introduction Course</h4>
-                    <p class="mt-1 font-mono text-xs text-gray-400">Codecademy &middot; Sep 2024</p>
-                </div>
+
+                <p class="font-mono text-sm text-gray-400">
+                    Software Engineering Bachelor's Degree &middot; GPA of 3.94 - 4.00
+                </p>
+                <p class="max-w-2xl text-sm leading-relaxed text-gray-300">
+                   SIC AI × Misk Skills Program, a 9-week intensive training in AI and data science. Developed skills in machine learning (e.g., linear regression, random forest), deep learning
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="reveal-element space-y-6">
-            <h3 class="font-pixel text-2xl font-bold"><span class="mr-2 font-mono text-techGreen">&middot;</span> Volunteering</h3>
-            <div class="grid gap-4">
-                <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/10">
-                    <h4 class="text-base font-bold text-white">Scientific &amp; Organizing Committee Member</h4>
-                    <p class="mt-1 font-mono text-xs text-techGreen">IEEE UQU &amp; UQU Computing Club &middot; 2024 - Present</p>
-                </div>
-                <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/10">
-                    <h4 class="text-base font-bold text-white">Google Developer Student Club (GDSC)</h4>
-                    <p class="mt-1 font-mono text-xs text-gray-400">Active Member &middot; June 2024 - Present</p>
-                </div>
+    <!-- أزرار الأسهم أسفل البطاقة -->
+    <div class="mt-5 flex justify-center gap-3">
+        <button id="experience-previous" type="button" aria-label="التجربة السابقة"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-gray-400 transition hover:border-techGreen hover:text-techGreen">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+
+        <button id="experience-next" type="button" aria-label="التجربة التالية"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-gray-400 transition hover:border-techGreen hover:text-techGreen">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= FEATURED PROJECTS (GSAP INFINITE CAROUSEL) ================= -->
+<section id="projects" class="py-24 bg-[#0B0F19] text-white relative z-10 border-t border-white/5 overflow-hidden">
+    <div class="container mx-auto px-6 max-w-6xl mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight font-pixel text-white flex items-center">
+                    <span class="text-[#00FF66] font-mono text-xl mr-2 ">03.</span> <a href="https://www.linkedin.com/in/amirah-mohsen/details/projects/" target="_blank" rel="noopener noreferrer">  Featured Projects  </a>
+                </h2>
+                <div class="w-20 h-[2px] bg-[#00FF66] mt-2"></div>
+            </div>
+            <p class="text-gray-400 font-mono text-xs md:text-sm max-w-md">
+                Explore some of my signature software architecture, backend systems, and ML solutions.
+            </p>
+        </div>
+    </div>
+
+    <!-- حاوية السلايدر المتحرك مع التوقف عند الماوس -->
+    <div class="projects-slider-wrapper relative w-full overflow-hidden select-none py-4">
+        <!-- حواف التلاشي الضبابية على الجوانب -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0B0F19] to-transparent z-20 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0B0F19] to-transparent z-20 pointer-events-none"></div>
+
+        <!-- المسار الذي يتحرك عبر GSAP -->
+        <div id="projects-track" class="flex flex-nowrap w-max gap-8 items-center px-4">
+            
+
+
+
+
+
+
+
+            <!-- [المجموعة الأولى من المشاريع] -->
+            <div class="projects-group flex gap-8 items-center flex-shrink-0">
+                
+
+
+
+
+
+                <!-- Project focusy_1 1 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <!-- صورة المشروع -->
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                Full-Stack
+                            </span>
+                            <img src="static\portfolio_images\focusy_1.png" alt="FocusyApp" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <!-- محتوى الكارد -->
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Fucusy Flutter App
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                Simple To-Do List timer app for task management, helps users organize their daily tasks efficiently and track their productivity through visual stats and built-in timers
+                            </p>
+                        </div>
+                    </div>
+                    <!-- أسفل الكارد والزر -->
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500"> &middot; Flutter </span>
+                        <a href="https://github.com/laljoudi/Focusy-App" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+
+
+
+                   <!-- Project Murtad 2 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                Full-Stack
+                            </span>
+                            <img src="static\portfolio_images\Murtad.png" alt="Workflow Tool" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Murtad: Transportation Management (Graduation Project)
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                 <!-- multi-platform transportation management system, designed to automate and improve university student transportation operations, connects four roles: students, drivers, service providers, and a super admin -->
+                                  Developed RESTful APIs and backend services using Laravel and MySQL and documented it by Postman and integrate with  AWS EC2 instance
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Laravel &middot;MySQL &middot;Postman &middot;AWS</span>
+                        <a href="https://drive.google.com/file/d/19zSZJRxXCHRxsAlgAXOL5NS5aU_mZqhg/view?usp=sharing" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Poster</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+
+
+
+                <!-- Project SIC 3 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#FF6B35] border border-[#FF6B35]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                AI & ML
+                            </span>
+                            <img src="static\portfolio_images\sic.png" alt="Workflow Tool" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Emergency Department Optimizer
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                predictive framework that helps Emergency Department administrators anticipate high-demand periods, optimize staff allocation, reduce waiting time
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Python &middot; ML &middot; Documentation</span>
+                        <a href="https://github.com/Hatoun04/Emergency-Department-Project" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View details</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+         <!-- Project django 5 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                 Full-Stack Portfolio
+                            </span>
+                            <img src="static\portfolio_images\Portfolio.png" alt="IEEE Brand Identity" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Amirah Portfolio this website!
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                using Django and MariaDB. Developed as part of the Tuwaiq Academy Django Bootcamp. Implemented a dynamic blog module with article management
+                                </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Django &middot; MariaDB &middot; GSAP </span>
+                        <a href="https://github.com/MIRA-Coding/Django-Portfolio-Article-webApp" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+                <!-- Project db 4 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                SQL Database
+                            </span>
+                            <img src="static\portfolio_images\db.png" alt="IEEE Brand Identity" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                MySQL Library Management system
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                structured MySQL database to manage information related to books, authors, customers, orders, and wishlists.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">React JS &middot; Tailwind &middot; Figma</span>
+                        <a href="https://github.com/MIRA-Coding/Library-Database-MySQL" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+
+
+        
+
+
+            </div>
+
+            <!-- [المجموعة الثانية: تكرار كود المجموعة الأولى 100% لتحقيق الخدعة اللانهائية] -->
+            <div class="projects-group flex gap-8 items-center flex-shrink-0">
+                
+
+
+
+
+              
+
+
+                <!-- Project focusy_1 1 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <!-- صورة المشروع -->
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                Full-Stack
+                            </span>
+                            <img src="static\portfolio_images\focusy_1.png" alt="FocusyApp" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <!-- محتوى الكارد -->
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Fucusy Flutter App
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                Simple To-Do List timer app for task management, helps users organize their daily tasks efficiently and track their productivity through visual stats and built-in timers
+                            </p>
+                        </div>
+                    </div>
+                    <!-- أسفل الكارد والزر -->
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500"> &middot; Flutter </span>
+                        <a href="https://github.com/laljoudi/Focusy-App" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+
+
+
+                   <!-- Project Murtad 2 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                Full-Stack
+                            </span>
+                            <img src="static\portfolio_images\Murtad.png" alt="Workflow Tool" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Murtad: Transportation Management (Graduation Project)
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                 <!-- multi-platform transportation management system, designed to automate and improve university student transportation operations, connects four roles: students, drivers, service providers, and a super admin -->
+                                  Developed RESTful APIs and backend services using Laravel and MySQL and documented it by Postman and integrate with  AWS EC2 instance
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Laravel &middot;MySQL &middot;Postman &middot;AWS</span>
+                        <a href="https://drive.google.com/file/d/19zSZJRxXCHRxsAlgAXOL5NS5aU_mZqhg/view?usp=sharing" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Poster</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+
+
+
+                <!-- Project SIC 3 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#FF6B35] border border-[#FF6B35]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                AI & ML
+                            </span>
+                            <img src="static\portfolio_images\sic.png" alt="Workflow Tool" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Emergency Department Optimizer
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                predictive framework that helps Emergency Department administrators anticipate high-demand periods, optimize staff allocation, reduce waiting time
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Python &middot; ML &middot; Documentation</span>
+                        <a href="https://github.com/Hatoun04/Emergency-Department-Project" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View details</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+                  <!-- Project django 5 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                 Full-Stack Portfolio
+                            </span>
+                            <img src="static\portfolio_images\Portfolio.png" alt="IEEE Brand Identity" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                Amirah Portfolio this website!
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                using Django and MariaDB. Developed as part of the Tuwaiq Academy Django Bootcamp. Implemented a dynamic blog module with article management
+                                </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">Django &middot; MariaDB &middot; GSAP </span>
+                        <a href="https://github.com/MIRA-Coding/Django-Portfolio-Article-webApp" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+                <!-- Project db 4 -->
+                <article class="project-card w-[320px] md:w-[380px] bg-[#121826] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:border-[#00FF66]/50 transition-all duration-500 group flex flex-col justify-between h-[480px]">
+                    <div>
+                        <div class="relative w-full h-[220px] overflow-hidden">
+                            <span class="absolute top-3 left-3 bg-[#0B0F19]/80 backdrop-blur-md text-[#00FF66] border border-[#00FF66]/30 text-xs font-mono px-3 py-1 rounded-full z-10">
+                                SQL Database
+                            </span>
+                            <img src="static\portfolio_images\db.png" alt="IEEE Brand Identity" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold font-pixel text-white group-hover:text-[#00FF66] transition-colors">
+                                MySQL Library Management system
+                            </h3>
+                            <p class="text-gray-400 font-mono text-xs leading-relaxed line-clamp-3">
+                                structured MySQL database to manage information related to books, authors, customers, orders, and wishlists.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span class="text-xs font-mono text-gray-500">React JS &middot; Tailwind &middot; Figma</span>
+                        <a href="https://github.com/MIRA-Coding/Library-Database-MySQL" class="inline-flex items-center gap-2 text-sm font-mono text-white group-hover:text-[#00FF66] transition-colors">
+                            <span class="text-right leading-tight max-w-[90px]">View Scripts</span>
+                            <i class="bi bi-arrow-up-right transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+                                                <!--------------------- Achievements Section ----------------------->
+
+
+<section id="achievements"
+    class="relative z-10 container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-2">
+    <div class="reveal-element space-y-6">
+        <h3 class="font-pixel text-2xl font-bold"><span class="mr-2 font-mono text-techGreen">&middot;</span>
+            Certifications</h3>
+        <div class="grid gap-4">
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Introduction to DevOps &amp; Cloud Computing</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">IBM &middot; Dec 2024</p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Learn Git: Introduction Course</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">Codecademy &middot; Sep 2024</p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Learn Git: Introduction Course</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">Codecademy &middot; Sep 2024</p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Learn Git: Introduction Course</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">Codecademy &middot; Sep 2024</p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Learn Git: Introduction Course</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">Codecademy &middot; Sep 2024</p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Scientific &amp; Organizing Committee Member</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">IEEE UQU &amp; UQU Computing Club &middot; <span
+                        class="text-techGreen">2024 - 2026</span></p>
             </div>
         </div>
-    </section>
+    </div>
 
-
-
-
-    <section id="collaborate" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24 text-center">
-        <div class="glass-panel relative overflow-hidden rounded-3xl border border-white/10 p-12">
-            <div class="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-techOrange/20 blur-3xl"></div>  <!-- هنا الوهج اخليه يتحرك-->
-            <i class="bi bi-brightness-high mb-4 inline-block animate-spin-slow text-3xl text-techOrange"></i>
-            <h2 class="mb-4 font-pixel text-3xl font-bold text-white md:text-4xl">Launch Your Project Automation</h2>
-            <h3 class="mx-auto mb-8 max-w-lg font-mono text-sm leading-relaxed text-gray-300">
-                Let's build reliable backend systems, robust customized workflow tools, or deploy tailored scripts together.
-            </h3>
-            <a href="mailto:ameramohsen.silver@gmail.com" class="inline-block rounded-xl border border-techOrange px-8 py-3 font-mono font-bold text-techOrange transition-all duration-300 hover:bg-techOrange hover:text-white">
-                [ Send Direct Email ]
-            </a>
+    <div class="reveal-element space-y-6">
+        <h3 class="font-pixel text-2xl font-bold"><span class="mr-2 font-mono text-techGreen">&middot;</span>
+            Volunteering</h3>
+        <div class="grid gap-4">
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Scientific &amp; Organizing Committee Member</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">IEEE UQU &amp; UQU Computing Club &middot; <span
+                        class="text-techGreen">2024 - 2026</span></p>
+            </div>
+            <!-- <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                     <h4 class="text-base font-bold text-white">Google Developer Student Club (GDSC)</h4>
+                    <p class="mt-1 font-mono text-xs text-gray-400">Active Member &middot; <span class="text-techGreen"> june 2024 - 2026</span>t</p> 
+                </div> -->
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Scientific &amp; Organizing Committee Member</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">IEEE UQU &amp; UQU Computing Club &middot; <span
+                        class="text-techGreen">2024 - 2026</span></p>
+            </div>
+            <div class="glass-panel rounded-2xl border border-white/5 p-5 transition-colors hover:border-white/40">
+                <h4 class="text-base font-bold text-white">Scientific &amp; Organizing Committee Member</h4>
+                <p class="mt-1 font-mono text-xs text-gray-400">IEEE UQU &amp; UQU Computing Club &middot; <span
+                        class="text-techGreen">2024 - 2026</span></p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+
+
+                                                <!--------------------- Collaborate Section ----------------------->
+
+
+
+<section id="collaborate" class="reveal-element relative z-10 container mx-auto max-w-4xl px-6 py-24 text-center">
+    <div class="glass-panel relative overflow-hidden rounded-3xl border border-white/10 p-12">
+        <div class="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-techOrange/20 blur-3xl">
+        </div> <!-- هنا الوهج اخليه يتحرك-->
+        <i class="bi bi-brightness-high mb-4 inline-block animate-spin-slow text-3xl text-techOrange"></i>
+        <h2 class="mb-4 font-pixel text-3xl font-bold text-white md:text-4xl">let's collaborate on Project</h2>
+        <h3 class="mx-auto mb-8 max-w-lg font-mono text-sm leading-relaxed text-gray-300">
+            Let's work together to build reliable backends, robust custom tools, or design scalable data architectures.
+        </h3>
+        <a href="mailto:ameramohsen.silver@gmail.com"
+            class="inline-block rounded-xl border border-techOrange px-8 py-3 font-mono font-bold text-techOrange transition-all duration-300 hover:bg-techOrange hover:text-white">
+            Send Me Email <i class="bi bi-envelope-fill inline-block text-sm"></i>
+        </a>
+    </div>
+</section>
 </div>
 {% endblock %}
 
@@ -187,68 +760,120 @@
 {% block extra_js %}
 <script src="{% static 'js/home.js' %}"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof gsap === "undefined") return;
+    document.addEventListener("DOMContentLoaded", () => {
+        if (typeof gsap === "undefined") return;
 
-    const textElement = document.getElementById("typing-text");
-    const strings = ["I'm Amirah Mohsen", "Here world of TECH"];
-    let strIdx = 0, charIdx = 0, isErasing = false;
+        const textElement = document.getElementById("typing-text");
+        const strings = ["I'm Amirah Mohsen", "This world of TECH"];
+        let strIdx = 0, charIdx = 0, isErasing = false;
 
-    function typeAnimation() {
-        const currentStr = strings[strIdx];
-        const cursor = '<span class="text-techGreen animate-pulse">|</span>';
-        if (!isErasing) {
-            textElement.innerHTML = `&lt; ${currentStr.substring(0, charIdx)}${cursor} &gt;`;
-            charIdx++;
-            if (charIdx > currentStr.length) {
-                isErasing = true;
-                setTimeout(typeAnimation, 2000);
+        function typeAnimation() {
+            const currentStr = strings[strIdx];
+            const cursor = '<span class="text-techGreen animate-pulse">|</span>';
+            if (!isErasing) {
+                textElement.innerHTML = `&lt; ${currentStr.substring(0, charIdx)}${cursor} &gt;`;
+                charIdx++;
+                if (charIdx > currentStr.length) {
+                    isErasing = true;
+                    setTimeout(typeAnimation, 2000);
+                } else {
+                    setTimeout(typeAnimation, 70);
+                }
             } else {
-                setTimeout(typeAnimation, 70);
-            }
-        } else {
-            textElement.innerHTML = `&lt; ${currentStr.substring(0, charIdx)}${cursor} &gt;`;
-            charIdx--;
-            if (charIdx < 0) {
-                isErasing = false;
-                strIdx = (strIdx + 1) % strings.length;
-                setTimeout(typeAnimation, 300);
-            } else {
-                setTimeout(typeAnimation, 35);
+                textElement.innerHTML = `&lt; ${currentStr.substring(0, charIdx)}${cursor} &gt;`;
+                charIdx--;
+                if (charIdx < 0) {
+                    isErasing = false;
+                    strIdx = (strIdx + 1) % strings.length;
+                    setTimeout(typeAnimation, 300);
+                } else {
+                    setTimeout(typeAnimation, 35);
+                }
             }
         }
-    }
-    if (textElement) typeAnimation();
+        if (textElement) typeAnimation();
 
-    const track = document.getElementById("skills-track");
-    if (track) {
-        gsap.to(track, {
-            xPercent: -50,
-            ease: "none",
-            duration: 20,
-            repeat: -1,
+        const track = document.getElementById("skills-track");
+        if (track) {
+            gsap.to(track, {
+                xPercent: -50,
+                ease: "none",
+                duration: 20,
+                repeat: -1,
+            });
+        }
+
+        if (typeof ScrollTrigger !== "undefined") {
+            gsap.utils.toArray(".reveal-element").forEach((element) => {
+                gsap.fromTo(
+                    element,
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none none",
+                        },
+                    }
+                );
+            });
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // ================= PROJECTS CAROUSEL (PAUSE ON HOVER) =================
+    const projectsTrack = document.getElementById('projects-track');
+    
+    if (projectsTrack) {
+        // إنشاء أنميشن GSAP المستمر
+        const projectsTween = gsap.to(projectsTrack, {
+            xPercent: -50, // تحريك المسار إلى اليسار بنسبة 50% (لتحريك مجموعة واحدة من المشاريع)
+            ease: "none", // عدم وجود تسارع أو تباطؤ للحركة
+            duration: 20, // إمكانية التحكم في السرعة بالثواني
+            repeat: -1  // تكرار الحركة إلى ما لا نهاية
+        });
+
+        // التوقف الناعم عند مرور الماوس فوق الحاوية
+        projectsTrack.addEventListener("mouseenter", () => {
+            projectsTween.pause();
+        });
+
+        // استكمال الحركة عند ابتعاد الماوس
+        projectsTrack.addEventListener("mouseleave", () => {
+            projectsTween.play();
         });
     }
 
-    if (typeof ScrollTrigger !== "undefined") {
-        gsap.utils.toArray(".reveal-element").forEach((element) => {
-            gsap.fromTo(
-                element,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 85%",
-                        toggleActions: "play none none none",
-                    },
-                }
-            );
-        });
-    }
 });
+
 </script>
+<script>
+    const experienceCards = document.querySelectorAll(".experience-card");
+    let currentExperience = 0;
+
+    function showExperience(index) {
+        experienceCards.forEach((card, i) => {
+            card.classList.toggle("hidden", i !== index);
+            card.classList.toggle("flex", i === index);
+        });
+    }
+
+    document.getElementById("experience-next").addEventListener("click", () => {
+        currentExperience = (currentExperience + 1) % experienceCards.length;
+        showExperience(currentExperience);
+    });
+
+    document.getElementById("experience-previous").addEventListener("click", () => {
+        currentExperience =
+            (currentExperience - 1 + experienceCards.length) % experienceCards.length;
+        showExperience(currentExperience);
+    });
+</script>
+
 {% endblock %}
+
